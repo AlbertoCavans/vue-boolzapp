@@ -53,12 +53,20 @@ a {
   height: 100vh;
 }
 
+/* SIDEBAR */
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: hsl(0deg 0% 91.76%);
+  padding: 0 5px;
 }
 
 .white-pic {
@@ -96,5 +104,24 @@ header .fa-solid {
 
 .search-bar {
   background-color: hsl(0deg 0% 91.76%);
-  height: 70px;
+  height: 50px;
+}
+
+.contacts {
+  flex-grow: 1;
+  background-color: hsl(0deg 0% 100%);
+}
+
+.contact {
+  padding: 5px 10px;
+}
+
+.contact-pic {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+h6 {
+  color: lightgrey;
 }
