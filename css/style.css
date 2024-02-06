@@ -1,4 +1,4 @@
-/* SETTINGS-------------------------------------------------
+/* SETTINGS------------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -26,12 +26,7 @@ a {
   text-decoration: none;
 }
 
-UTILS------------------------------------------------------
-.container {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
+/* UTILS------------------------------------------------------ */
 
 .clearfix::after {
   content: "";
@@ -39,13 +34,67 @@ UTILS------------------------------------------------------
   clear: both;
 }
 
-DEBUG---------------------------------------------------------
-
+/* DEBUG--------------------------------------------------------- */
 
 .debug {
   min-height: 80px;
   background-color: lightgrey;
-  padding: 2rem;
   border: 3px dashed red;
 }
- */
+
+.container-fluid {
+  background-image: linear-gradient(
+    to bottom,
+    #009688 0vh,
+    #009688 15vh,
+    #d8dbd6 15vh,
+    #d8dbd6 100vh
+  );
+  height: 100vh;
+}
+
+header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(0deg 0% 91.76%);
+}
+
+.white-pic {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+header .fa-solid {
+  margin: 10px;
+  color: hsl(0deg 0% 69.41%);
+  font-size: 1.5rem;
+}
+
+.update-bar {
+  background-color: hsl(198.55deg 94.83% 77.25%);
+  height: 70px;
+}
+
+.update-bar .fa-solid {
+  margin: 10px;
+  color: hsl(198.55deg 94.83% 77.25%);
+  font-size: 1.5rem;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px 8px;
+}
+
+.update-bar span:last-child {
+  display: block;
+  text-decoration: underline;
+  color: gray;
+  font-size: 0.8rem;
+}
+
+.search-bar {
+  background-color: hsl(0deg 0% 91.76%);
+  height: 70px;
+}
