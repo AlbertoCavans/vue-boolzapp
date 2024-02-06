@@ -34,6 +34,10 @@ a {
   clear: both;
 }
 
+h6 small {
+  color: gray;
+}
+
 /* DEBUG--------------------------------------------------------- */
 
 .debug {
@@ -41,6 +45,8 @@ a {
   background-color: lightgrey;
   border: 3px dashed red;
 }
+
+/* GENERAL */
 
 .container-fluid {
   background-image: linear-gradient(
@@ -60,6 +66,8 @@ a {
   flex-direction: column;
 }
 
+/* ! HEADERS */
+
 header {
   height: 70px;
   display: flex;
@@ -69,7 +77,7 @@ header {
   padding: 0 5px;
 }
 
-.white-pic {
+.user-pic {
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -80,6 +88,8 @@ header .fa-solid {
   color: hsl(0deg 0% 69.41%);
   font-size: 1.5rem;
 }
+
+/* ! UPDATE BAR */
 
 .update-bar {
   background-color: hsl(198.55deg 94.83% 77.25%);
@@ -102,14 +112,19 @@ header .fa-solid {
   font-size: 0.8rem;
 }
 
+/* ! SEARCHBAR */
+
 .search-bar {
   background-color: hsl(0deg 0% 91.76%);
   height: 50px;
 }
 
+/* ! CONTACTS SECTION */
+
 .contacts {
   flex-grow: 1;
   background-color: hsl(0deg 0% 100%);
+  overflow-y: scroll;
 }
 
 .contact {
@@ -117,11 +132,36 @@ header .fa-solid {
 }
 
 .contact-pic {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
 }
 
-h6 {
-  color: lightgrey;
+/* MAIN BAR */
+
+/* ! HEADER SAME AS PREVIOUS */
+
+/* ! CHAT CONTAINER */
+
+.chat-container {
+  background-image: url(../img/mine.jpg);
+  overflow-y: scroll;
+}
+
+/* ! CHAT INPUT BAR */
+
+.chat-input-bar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(26.67deg 27.27% 93.53%);
+  padding: 0 10px;
+}
+
+.vocal-input,
+.emoticons-input {
+  padding: 0px 20px;
+  font-size: 1.5rem;
+  color: grey;
 }
