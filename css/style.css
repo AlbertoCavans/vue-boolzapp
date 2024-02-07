@@ -148,6 +148,25 @@ header .fa-solid {
   overflow-y: scroll;
 }
 
+.message {
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  max-width: 80%;
+}
+
+.message.sent {
+  background-color: hsl(94.29deg 84% 85.29%);
+  float: left;
+  clear: both;
+}
+
+.message.received {
+  background-color: white;
+  float: right;
+  clear: both;
+}
+
 /* ! CHAT INPUT BAR */
 
 .chat-input-bar {
