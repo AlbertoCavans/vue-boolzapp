@@ -1,9 +1,12 @@
 const { createApp } = Vue;
 
+console.log(contacts);
+
 const app = createApp({
   data() {
     return {
-      title: "Hello Vue!",
+      contacts: contacts,
+      chattingNow: 0,
     };
   },
 
