@@ -154,6 +154,7 @@ header .fa-solid {
   background-image: url(../img/mine.jpg);
   overflow-y: scroll;
   height: calc(90vh - 140px);
+  width: 100%;
 }
 
 .message {
