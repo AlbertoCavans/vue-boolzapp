@@ -57,6 +57,12 @@ h6 small {
     #d8dbd6 100vh
   );
   height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  height: 90vh;
 }
 
 /* SIDEBAR */
@@ -125,6 +131,7 @@ header .fa-solid {
   flex-grow: 1;
   background-color: hsl(0deg 0% 100%);
   overflow-y: scroll;
+  height: calc(90vh - 190px);
 }
 
 .contact {
@@ -146,6 +153,7 @@ header .fa-solid {
 .chat-container {
   background-image: url(../img/mine.jpg);
   overflow-y: scroll;
+  height: calc(90vh - 140px);
 }
 
 .message {
@@ -157,14 +165,12 @@ header .fa-solid {
 
 .message.sent {
   background-color: hsl(94.29deg 84% 85.29%);
-  float: left;
-  clear: both;
+  align-self: flex-end;
 }
 
 .message.received {
   background-color: white;
-  float: right;
-  clear: both;
+  align-self: flex-start;
 }
 
 /* ! CHAT INPUT BAR */
