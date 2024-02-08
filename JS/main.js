@@ -10,18 +10,24 @@ const app = createApp({
     };
   },
 
+  computed: {
+    chatVisualized() {
+      return this.contacts[this.chattingNow];
+    },
+  },
+
   methods: {
     visualLastAccess(messages) {
       const receivedMessages = messages.filter((message) => {
         return message.status == "received";
       });
       const lastMessageReceived = receivedMessages[receivedMessages.length - 1];
-      return lastMessageReceived.date;
+      return lastMessageReceived ? lastMessageReceived.date : "";
     },
 
     visualLastMessage(messages) {
       const lastMessageReceived = messages.at(-1);
-      return lastMessageReceived.message;
+      return lastMessageReceived ? lastMessageReceived.message : "";
     },
   },
 });
