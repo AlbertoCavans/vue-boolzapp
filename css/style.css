@@ -38,6 +38,13 @@ h6 small {
   color: gray;
 }
 
+.crop {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 150px;
+  overflow: hidden;
+}
+
 /* DEBUG--------------------------------------------------------- */
 
 .debug {
