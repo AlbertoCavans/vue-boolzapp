@@ -39,6 +39,9 @@
 
     <!-- Link main JavaScript -->
     <script type="text/javascript" src="./JS/main.js" defer></script>
+
+    <!-- Luxon library -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
   </head>
 
   <body>
@@ -75,6 +78,8 @@
                 ></span>
               </div>
               <input
+                v-model="searchGroup"
+                @keyUp="searchFilter()"
                 type="text"
                 class="form-control ms-1"
                 placeholder="Username"
@@ -88,6 +93,7 @@
             <div
               class="contact d-flex"
               v-for="(contact, index) in contacts"
+              v-show="contact.visible"
               @click="selectChat(index)"
             >
               <div class="d-flex align-items-center">
@@ -152,7 +158,7 @@
                 <span class="message-text">{{ message.message }}</span>
                 <div class="d-flex justify-content-end">
                   <h6 class="message-time">
-                    <small>{{ message.date }}</small>
+                    <small>{{ formatDate(message.date) }}</small>
                   </h6>
                 </div>
               </div>
@@ -163,6 +169,7 @@
             <div class="emoticons-input">
               <i class="fa-regular fa-face-smile"></i>
             </div>
+
             <div class="chat-input flex-grow-1">
               <input
                 v-model="inputMessage.message"
