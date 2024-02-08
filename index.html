@@ -76,7 +76,7 @@
               </div>
               <input
                 type="text"
-                class="form-control"
+                class="form-control ms-1"
                 placeholder="Username"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
@@ -85,7 +85,7 @@
           </div>
           <!-- !!!!!!! SIDEBAR CONTACTS -->
           <div class="contacts">
-            <!-- ???????? SIDEBAR CONTACT 1 -->
+            <!-- ???????? SIDEBAR CONTACTS -->
             <div class="contact d-flex" v-for="contact in contacts">
               <div class="d-flex align-items-center">
                 <img :src="contact.avatar" alt="" class="contact-pic" />
@@ -116,14 +116,19 @@
           <header>
             <div class="contact d-flex">
               <div class="d-flex align-items-center">
-                <img src="./img/avatar_1.jpg" alt="" class="contact-pic" />
+                <img :src="chatVisualized.avatar" alt="" class="contact-pic" />
               </div>
               <div
                 class="contact-info d-flex flex-grow-1 align-items-start justify-content-between p-2"
               >
                 <div>
-                  <h6 class="contact-name">Michele</h6>
-                  <h6 class="time f-right"><small>12:00</small></h6>
+                  <h6 class="contact-name">{{ chatVisualized.name }}</h6>
+                  <h6 class="time f-right">
+                    <small v-if="chatVisualized.messages.length"
+                      >Ultimo accesso: {{
+                      visualLastAccess(chatVisualized.messages) }}</small
+                    >
+                  </h6>
                 </div>
               </div>
             </div>
