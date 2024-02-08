@@ -11,13 +11,18 @@ const app = createApp({
   },
 
   methods: {
-    printHello() {
-      console.log("Hello!");
+    visualLastAccess(messages) {
+      const receivedMessages = messages.filter((message) => {
+        return message.status == "received";
+      });
+      const lastMessageReceived = receivedMessages[receivedMessages.length - 1];
+      return lastMessageReceived.date;
     },
-  },
 
-  mounted() {
-    this.printHello();
+    visualLastMessage(messages) {
+      const lastMessageReceived = messages.at(-1);
+      return lastMessageReceived.message;
+    },
   },
 });
 
