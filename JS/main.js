@@ -6,7 +6,7 @@ const app = createApp({
   data() {
     return {
       contacts: contacts,
-      chattingNow: 0,
+      chattingNow: 3,
     };
   },
 
