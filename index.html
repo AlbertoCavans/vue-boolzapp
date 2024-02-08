@@ -85,7 +85,6 @@
           </div>
           <!-- !!!!!!! SIDEBAR CONTACTS -->
           <div class="contacts">
-            <!-- ???????? SIDEBAR CONTACTS -->
             <div
               class="contact d-flex"
               v-for="(contact, index) in contacts"
@@ -166,6 +165,8 @@
             </div>
             <div class="chat-input flex-grow-1">
               <input
+                v-model="inputMessage.message"
+                @keyUp.enter="sendMessage()"
                 class="form-control"
                 type="text"
                 placeholder="Scrivi un messaggio"
