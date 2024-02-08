@@ -29,6 +29,10 @@ const app = createApp({
       const lastMessageReceived = messages.at(-1);
       return lastMessageReceived ? lastMessageReceived.message : "";
     },
+
+    selectChat(newIndex) {
+      this.chattingNow = newIndex;
+    },
   },
 });
 
