@@ -6,7 +6,12 @@ const app = createApp({
   data() {
     return {
       contacts: contacts,
-      chattingNow: 3,
+      chattingNow: 0,
+      inputMessage: {
+        date: "",
+        message: "",
+        status: "sent",
+      },
     };
   },
 
@@ -32,6 +37,30 @@ const app = createApp({
 
     selectChat(newIndex) {
       this.chattingNow = newIndex;
+    },
+
+    sendMessage() {
+      const inputMessage = { ...this.inputMessage };
+
+      inputMessage.date = this.getCurrentTime();
+      this.chatVisualized.messages.push(inputMessage);
+
+      setTimeout(this.sendAutomatedResponse, 3000);
+    },
+
+    sendAutomatedResponse() {
+      const inputMessage = {
+        message: "ok",
+        date: this.getCurrentTime(),
+        status: "received",
+      };
+
+      this.chatVisualized.messages.push(inputMessage);
+    },
+
+    getCurrentTime() {
+      const now = new Date();
+      return `${now.getHours()}:${now.getMinutes()}`;
     },
   },
 });
