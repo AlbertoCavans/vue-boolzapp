@@ -141,30 +141,16 @@
           <!-- !!!!!!! MAINBAR CHAT CONTAINER -->
           <div class="chat-container d-flex align-items-start">
             <div class="messagges w-100 d-flex flex-column p-5">
-              <div class="message sent">
-                <span class="message-text">Lorem ipsum dolor, sit</span>
+              <div
+                class="message sent"
+                v-for="message in contacts[chattingNow].messages"
+                :class="message.status"
+              >
+                <span class="message-text">{{ message.message }}</span>
                 <div class="d-flex justify-content-end">
-                  <h6 class="message-time"><small>11.00</small></h6>
-                </div>
-              </div>
-
-              <div class="message received">
-                <span class="message-text">Lorem ipsum dolor sit</span>
-                <div class="d-flex justify-content-end">
-                  <h6 class="message-time"><small>11.00</small></h6>
-                </div>
-              </div>
-              <div class="message sent">
-                <span class="message-text">Lorem ipsum dolor, sit ame </span>
-                <div class="d-flex justify-content-end">
-                  <h6 class="message-time"><small>11.00</small></h6>
-                </div>
-              </div>
-
-              <div class="message received">
-                <span class="message-text">Lorem ipsum dolor sit</span>
-                <div class="d-flex justify-content-end">
-                  <h6 class="message-time"><small>11.00</small></h6>
+                  <h6 class="message-time">
+                    <small>{{ message.date }}</small>
+                  </h6>
                 </div>
               </div>
             </div>
