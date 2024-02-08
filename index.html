@@ -86,7 +86,11 @@
           <!-- !!!!!!! SIDEBAR CONTACTS -->
           <div class="contacts">
             <!-- ???????? SIDEBAR CONTACTS -->
-            <div class="contact d-flex" v-for="contact in contacts">
+            <div
+              class="contact d-flex"
+              v-for="(contact, index) in contacts"
+              @click="selectChat(index)"
+            >
               <div class="d-flex align-items-center">
                 <img :src="contact.avatar" alt="" class="contact-pic" />
               </div>
