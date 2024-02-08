@@ -86,93 +86,26 @@
           <!-- !!!!!!! SIDEBAR CONTACTS -->
           <div class="contacts">
             <!-- ???????? SIDEBAR CONTACT 1 -->
-            <div class="contact d-flex">
+            <div class="contact d-flex" v-for="contact in contacts">
               <div class="d-flex align-items-center">
-                <img src="./img/avatar_1.jpg" alt="" class="contact-pic" />
+                <img :src="contact.avatar" alt="" class="contact-pic" />
               </div>
               <div
                 class="contact-info d-flex flex-grow-1 align-items-start justify-content-between p-2"
               >
-                <div>
-                  <h5 class="contact-name">Michele</h5>
-                  <h6><small>Last message</small></h6>
+                <div class="crop">
+                  <h5 class="contact-name">{{contact.name}}</h5>
+                  <h6>
+                    <small v-if="contact.messages.length"
+                      >{{ visualLastMessage(contact.messages) }}</small
+                    >
+                  </h6>
                 </div>
-                <h6 class="time f-right"><small>12:00</small></h6>
-              </div>
-            </div>
-            <!-- ???????? SIDEBAR CONTACT 2 -->
-            <div class="contact d-flex">
-              <div class="d-flex align-items-center">
-                <img src="./img/avatar_1.jpg" alt="" class="contact-pic" />
-              </div>
-              <div
-                class="contact-info d-flex flex-grow-1 align-items-start justify-content-between p-2"
-              >
-                <div>
-                  <h5 class="contact-name">Michele</h5>
-                  <h6><small>Last message</small></h6>
-                </div>
-                <h6 class="time f-right"><small>12:00</small></h6>
-              </div>
-            </div>
-            <!-- ???????? SIDEBAR CONTACT 3 -->
-            <div class="contact d-flex">
-              <div class="d-flex align-items-center">
-                <img src="./img/avatar_1.jpg" alt="" class="contact-pic" />
-              </div>
-              <div
-                class="contact-info d-flex flex-grow-1 align-items-start justify-content-between p-2"
-              >
-                <div>
-                  <h5 class="contact-name">Michele</h5>
-                  <h6><small>Last message</small></h6>
-                </div>
-                <h6 class="time f-right"><small>12:00</small></h6>
-              </div>
-            </div>
-            <!-- ???????? SIDEBAR CONTACT 4 -->
-            <div class="contact d-flex">
-              <div class="d-flex align-items-center">
-                <img src="./img/avatar_1.jpg" alt="" class="contact-pic" />
-              </div>
-              <div
-                class="contact-info d-flex flex-grow-1 align-items-start justify-content-between p-2"
-              >
-                <div>
-                  <h5 class="contact-name">Michele</h5>
-                  <h6><small>Last message</small></h6>
-                </div>
-                <h6 class="time f-right"><small>12:00</small></h6>
-              </div>
-            </div>
-            <!-- ???????? SIDEBAR CONTACT 5 -->
-            <div class="contact d-flex">
-              <div class="d-flex align-items-center">
-                <img src="./img/avatar_1.jpg" alt="" class="contact-pic" />
-              </div>
-              <div
-                class="contact-info d-flex flex-grow-1 align-items-start justify-content-between p-2"
-              >
-                <div>
-                  <h5 class="contact-name">Michele</h5>
-                  <h6><small>Last message</small></h6>
-                </div>
-                <h6 class="time f-right"><small>12:00</small></h6>
-              </div>
-            </div>
-            <!-- ???????? SIDEBAR CONTACT 6 -->
-            <div class="contact d-flex">
-              <div class="d-flex align-items-center">
-                <img src="./img/avatar_1.jpg" alt="" class="contact-pic" />
-              </div>
-              <div
-                class="contact-info d-flex flex-grow-1 align-items-start justify-content-between p-2"
-              >
-                <div>
-                  <h5 class="contact-name">Michele</h5>
-                  <h6><small>Last message</small></h6>
-                </div>
-                <h6 class="time f-right"><small>12:00</small></h6>
+                <h6 class="time f-right">
+                  <small v-if="contact.messages.length"
+                    >{{ visualLastAccess(contact.messages) }}</small
+                  >
+                </h6>
               </div>
             </div>
           </div>
