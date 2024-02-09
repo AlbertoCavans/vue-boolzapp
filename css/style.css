@@ -181,6 +181,22 @@ header .fa-solid {
   align-self: flex-start;
 }
 
+.delete-option {
+  position: absolute;
+  bottom: -50px;
+  right: -30px;
+  width: max-content;
+  display: none;
+}
+
+.delete-option.active {
+  display: block;
+}
+
+.delete-button {
+  padding: 15px;
+}
+
 /* ! CHAT INPUT BAR */
 
 .chat-input-bar {
