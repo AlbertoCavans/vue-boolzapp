@@ -91,30 +91,30 @@
           <!-- !!!!!!! SIDEBAR CONTACTS -->
           <div class="contacts">
             <div
-              class="contact d-flex"
               v-for="(contact, index) in contacts"
-              v-show="contact.visible"
               @click="selectChat(index)"
             >
-              <div class="d-flex align-items-center">
-                <img :src="contact.avatar" alt="" class="contact-pic" />
-              </div>
-              <div
-                class="contact-info d-flex flex-grow-1 align-items-start justify-content-between p-2"
-              >
-                <div class="crop">
-                  <h5 class="contact-name">{{contact.name}}</h5>
-                  <h6>
+              <div v-if="contact.visible" class="contact d-flex">
+                <div class="d-flex align-items-center">
+                  <img :src="contact.avatar" alt="" class="contact-pic" />
+                </div>
+                <div
+                  class="contact-info d-flex flex-grow-1 align-items-start justify-content-between p-2"
+                >
+                  <div class="crop">
+                    <h5 class="contact-name">{{contact.name}}</h5>
+                    <h6>
+                      <small v-if="contact.messages.length"
+                        >{{ visualLastMessage(contact.messages) }}</small
+                      >
+                    </h6>
+                  </div>
+                  <h6 class="time f-right">
                     <small v-if="contact.messages.length"
-                      >{{ visualLastMessage(contact.messages) }}</small
+                      >{{ visualLastAccess(contact.messages) }}</small
                     >
                   </h6>
                 </div>
-                <h6 class="time f-right">
-                  <small v-if="contact.messages.length"
-                    >{{ visualLastAccess(contact.messages) }}</small
-                  >
-                </h6>
               </div>
             </div>
           </div>
