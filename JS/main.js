@@ -15,6 +15,11 @@ const app = createApp({
         message: "",
         status: "sent",
       },
+
+      toggleOption: {
+        show: false,
+        index: 0,
+      },
     };
   },
 
@@ -103,13 +108,23 @@ const app = createApp({
         if (
           contact.name.toLowerCase().includes(this.searchGroup.toLowerCase())
         ) {
-          contact.visible = false;
-        } else {
           contact.visible = true;
+        } else {
+          contact.visible = false;
         }
 
         return contact;
       });
+    },
+
+    showButton(index) {
+      if (this.toggleOption.index == index) {
+        this.toggleOption.show = !this.toggleOption.show;
+      } else this.toggleOption.index = index;
+    },
+
+    deleteMessage(index) {
+      this.chatVisualized.messages.splice(index, 1);
     },
   },
 
