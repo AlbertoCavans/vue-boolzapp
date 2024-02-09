@@ -152,14 +152,27 @@
             <div class="messagges w-100 d-flex flex-column p-5">
               <div
                 class="message sent"
-                v-for="message in contacts[chattingNow].messages"
+                v-for="(message, index) in contacts[chattingNow].messages"
                 :class="message.status"
+                @click="showButton(index)"
               >
                 <span class="message-text">{{ message.message }}</span>
-                <div class="d-flex justify-content-end">
+                <div class="d-flex justify-content-end position-relative">
                   <h6 class="message-time">
                     <small>{{ formatDate(message.date) }}</small>
                   </h6>
+                  <div
+                    class="delete-option active"
+                    v-if="toggleOption.show && index == toggleOption.index"
+                  >
+                    <button
+                      type="button"
+                      class="delete-button btn btn-light"
+                      @click="deleteMessage(index)"
+                    >
+                      Cancella messaggio
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
